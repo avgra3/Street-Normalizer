@@ -1,5 +1,5 @@
 [project]
-name = "Street-Normalizer"
+name = "Street_Normalizer"
 version = "0.1.0"
 authors = [
   { name="Antony", email="antonygradillas@gmail.com" },
