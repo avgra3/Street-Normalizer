@@ -14,3 +14,12 @@ cleaned_street = cleaner(example_street)
 print(cleaned_street)
 # 123 54TH AVE APT 1115
 ```
+
+## Building Locally
+
+As there are no dependencies required to run this tool you can install using pip with the below:
+
+```bash
+pip install --upgrade git+https://github.com/avgra3/Street_Normalizer.git
+```
+
