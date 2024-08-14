@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = [
   { name="Antony", email="antonygradillas@gmail.com" },
 ]
-description = "TODO"
+description = "A simple python package that allows for normalizing street names"
 readme = {file = "README.md", content-type = "text/markdown"}
 license = { file = "LICENCE.txt" }
 requires-python = ">=3.9"
