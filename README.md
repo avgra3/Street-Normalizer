@@ -8,12 +8,9 @@ Using the [USPS](https://pe.usps.com/text/pub28/28c1_001.htm) for a method of no
 ## How it works:
 
 ```python
-from package import cleaner
-
-example_street = "123 12th Avenue Apt 1234"
-
+from street_normalizer import *
+example_street = "123 54th Ave apt 1115"
 cleaned_street = cleaner(example_street)
-
 print(cleaned_street)
-# 123 12TH AVE APT 1234
+# 123 54TH AVE APT 1115
 ```
