@@ -1,0 +1,25 @@
+[project]
+name = "Street-Normalizer"
+version = "0.1.0"
+authors = [
+  { name="Antony", email="antonygradillas@gmail.com" },
+]
+description = "TODO"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = { file = "LICENCE.txt" }
+requires-python = ">=3.9"
+dependencies = [
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/avgra3/Street-Normalizer"
+Issues = "https://github.com/avgra3/Street-Normalizer/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
