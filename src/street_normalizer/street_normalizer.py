@@ -1,3 +1,5 @@
+import re
+
 # Street abbreviations
 street_abbreviations = {
     "AVE": ['AVENIDA', 'AVENUE'],
@@ -57,7 +59,7 @@ normalized_street_suffixes = {
     'CRK': ['CREEK', 'CRK'],
     'CRES': ['CRESCENT', 'CRES', 'CRSENT', 'CRSNT'],
     'CRST': ['CREST'],
-    'XING': [''],
+    'XING': ['CROSSING', 'CRSSNG', 'XING'],
     'XRD': ['CROSSROAD'],
     'XRDS': ['CROSSROADS'],
     'CURV': ['CURVE '],
@@ -249,7 +251,7 @@ unit_designators = {
 }
 
 # Extraneous Characters to remove
-chars_to_remove = [".", ",", ";", ":", "  "]
+chars_to_remove = [".", ",", ";", ":", "  ", "-", "~"]
 
 
 # Actual Methods:
@@ -257,23 +259,23 @@ def normalize_street_suffixes(initial_value: str) -> str:
     cleaned = initial_value.upper().strip()
     for key in normalized_street_suffixes:
         for value in normalized_street_suffixes[key]:
-            if f" {value} " in cleaned:
-                cleaned = cleaned.replace(f" {value} ", f" {key} ")
+            pattern = r"\b" + re.escape(value) + r"\b"
+            cleaned = re.sub(pattern, key, cleaned)
     return cleaned
 
 def normalize_unit_designators(initial_value: str) -> str:
     cleaned = initial_value.upper().strip()
     for key in unit_designators:
-        if f" {key} " in cleaned:
-            cleaned = cleaned.replace(f" {key} ", f" {unit_designators[key]} ")
+        pattern = r"\b" + re.escape(key) + r"\b"
+        cleaned = re.sub(pattern, unit_designators[key], cleaned)
     return cleaned
 
 def normalize_street_abbreviations(initial_value: str) -> str:
     cleaned = initial_value.upper().strip()
     for key in street_abbreviations:
         for value in street_abbreviations[key]:
-            if f" {value} " in cleaned:
-                cleaned = cleaned.replace(f" {value} ", f" {key} ")
+            pattern = r"\b" + re.escape(value) + r"\b"
+            cleaned = re.sub(pattern, key, cleaned)
     return cleaned
 
 def remove_extra_chars(initial_value: str) -> str:
@@ -283,7 +285,7 @@ def remove_extra_chars(initial_value: str) -> str:
     return cleaned
 
 def cleaner(initial_value: str) -> str:
-    return normalize_street_suffixes(normalize_unit_designators(remove_extra_chars(initial_value)))
+    return normalize_street_abbreviations(normalize_street_suffixes(normalize_unit_designators(remove_extra_chars(initial_value))))
 
 def city_cleaner(city: str) -> str:
     if "," not in city:
