@@ -23,3 +23,15 @@ As there are no dependencies required to run this tool you can install using pip
 pip install --upgrade git+https://github.com/avgra3/Street_Normalizer.git
 ```
 
+## Testing
+
+In your terminal run
+
+```bash
+git clone https://github.com/avgra3/Street_Normalizer.git
+
+cd Street_Normalizer
+
+./run_tests.sh
+```
+
