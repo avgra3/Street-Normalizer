@@ -250,3 +250,22 @@ unit_designators = {
 
 # Extraneous Characters to remove
 chars_to_remove = [".", ",", ";", ":", "  ", "-", "~"]
+
+# Normalize Names
+names = {
+    "LLC": "",
+    "CENTER": "CTR",
+    "AMBULATORY SURGERY CENTERS": "ASC",
+    "AMBULATORY SURGERY CTR": "ASC",
+    "AMBULATORY SURGERY": "ASC",
+    "AMB SURG CTR": "ASC",
+    "BEHAVIORIAL HEALTH SYSTEM": "BHS",
+    "SURGICAL": "SURG",
+    "HOSPITAL": "HOSP",
+    "REHABILITATION": "REHAB",
+    "SERVICES": "SVC",
+    "SERVICE": "SVC",
+    "MOUNTAIN": "MTN",
+    "MOUNTAINS": "MTN",
+    "  ": " "
+}

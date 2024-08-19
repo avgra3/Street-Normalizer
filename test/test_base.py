@@ -3,7 +3,8 @@ import sys
 
 sys.path.append("..")
 
-from src.street_normalizer import normalize_street_suffixes, normalize_unit_designators, normalize_street_abbreviations, remove_extra_chars, cleaner, city_cleaner
+from src.street_normalizer import normalize_street_suffixes, normalize_unit_designators, normalize_street_abbreviations, remove_extra_chars, cleaner, city_cleaner, name_cleaner
+
 
 class TestStreetNormalizer(unittest.TestCase):
     def test_normalize_street_suffixes(self):
@@ -39,6 +40,11 @@ class TestStreetNormalizer(unittest.TestCase):
         self.assertEqual(city_cleaner(input_value_01), expected_result)
         self.assertEqual(city_cleaner(input_value_02), expected_result)
         self.assertEqual(city_cleaner(input_value_03), expected_result)
+
+    def test_names(self):
+        input_value = "Random Name LLC"
+        expected_value = "RANDOM NAME"
+        self.assertEqual(name_cleaner(input_value), expected_value)
 
 
 if __name__ == "__main__":
