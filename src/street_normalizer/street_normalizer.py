@@ -1,14 +1,28 @@
 import re
-from .references import street_abbreviations, normalized_street_suffixes, unit_designators, chars_to_remove, names
+from .references import (
+    street_abbreviations,
+    normalized_street_suffixes,
+    unit_designators,
+    chars_to_remove,
+    names,
+)
 
+
+def make_regex(items: list[str]) -> str:
+    regex_string = "("
+    for item in items:
+        regex_string += r"\b" + item + r"\b|"
+    regex_string = f"{regex_string[:-1]})"
+    return regex_string
 
 # Actual Methods:
+
+
 def normalize_street_suffixes(initial_value: str) -> str:
     cleaned = initial_value.upper().strip()
-    for key in normalized_street_suffixes:
-        for value in normalized_street_suffixes[key]:
-            pattern = r"\b" + re.escape(value) + r"\b"
-            cleaned = re.sub(pattern, key, cleaned)
+    for key, value in normalized_street_suffixes.items():
+        pattern = make_regex(value)
+        cleaned = re.sub(pattern, key, cleaned)
     return cleaned
 
 
@@ -22,10 +36,9 @@ def normalize_unit_designators(initial_value: str) -> str:
 
 def normalize_street_abbreviations(initial_value: str) -> str:
     cleaned = initial_value.upper().strip()
-    for key in street_abbreviations:
-        for value in street_abbreviations[key]:
-            pattern = r"\b" + re.escape(value) + r"\b"
-            cleaned = re.sub(pattern, key, cleaned)
+    for key, value in street_abbreviations.items():
+        pattern = r"\b" + re.escape(value) + r"\b"
+        cleaned = re.sub(pattern, key, cleaned)
     return cleaned
 
 

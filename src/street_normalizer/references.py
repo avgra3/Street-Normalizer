@@ -1,17 +1,18 @@
 # Street abbreviations
 street_abbreviations = {
-    "AVE": ['AVENIDA', 'AVENUE'],
-    "CLL": ['CALLE', 'STREET'],
-    "CMT": ['CAMINITO', 'LITTLE ROAD'],
-    "CAM": ['CAMINO', 'ROAD'],
-    "CER": ['CERRADA', 'CLOSED'],
-    "CIR": ['CIRCULO', 'CIRCLE'],
-    "ENT": ['ENTRADA', 'ENTRANCE'],
-    "PSO": ['PASEO', 'PATH'],
-    "PLA": ['PLACITA', 'LITTLE PLAZA'],
-    "RCH": ['RANCHO', 'RANCH'],
-    "VER": ['VEREDA', 'SMALL PATH'],
-    "VIS": ['VISTA', 'VIEW'],
+    # Spanish Prefixes: Appendix H
+    "AVE": "AVENIDA",
+    "CLL": "CALLE",
+    "CMT": "CAMINITO",
+    "CAM": "CAMINO",
+    "CER": "CERRADA",
+    "CIR": "CIRCULO",
+    "ENT": "ENTRADA",
+    "PSO": "PASEO",
+    "PLA": "PLACITA",
+    "RCH": "RANCHO",
+    "VER": "VEREDA",
+    "VIS": "VISTA",
 }
 
 # Commonly Used street suffixes to standardized abbreviation
