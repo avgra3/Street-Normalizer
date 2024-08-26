@@ -15,8 +15,6 @@ def make_regex(items: list[str]) -> str:
     regex_string = f"{regex_string[:-1]})"
     return regex_string
 
-# Actual Methods:
-
 
 def normalize_street_suffixes(initial_value: str) -> str:
     cleaned = initial_value.upper().strip()
