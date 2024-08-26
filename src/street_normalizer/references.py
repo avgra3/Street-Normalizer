@@ -16,6 +16,7 @@ street_abbreviations = {
 }
 
 # Commonly Used street suffixes to standardized abbreviation
+# Comes from Appendix C, Section C1
 normalized_street_suffixes = {
     'ALY': ['ALLEE', 'ALLEY', 'ALLY', 'ALY'],
     'ANX': ['ANEX', 'ANNEX', 'ANNX', 'ANX'],
@@ -222,6 +223,7 @@ normalized_street_suffixes = {
 }
 
 # Unit Designators
+# Comes from USPS Appendix C, Section C2
 unit_designators = {
     'APARTMENT': 'APT',
     'BASEMENT': 'BSMT',
