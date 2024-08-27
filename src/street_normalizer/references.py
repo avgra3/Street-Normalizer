@@ -272,3 +272,15 @@ names = {
     "MOUNTAINS": "MTN",
     "  ": " "
 }
+
+# Normalize Cardinal Directions
+directions = {
+    "N": ["NORTH", "NORTE"],
+    "S": ["SOUTH", "SUR"],
+    "E": ["EAST", "ESTE"],
+    "W": ["WEST", "OESTE"],
+    "NW": ["NORTH WEST", "NOROESTE"],
+    "NE": ["NORTH EAST", "NORESTE"],
+    "SW": ["SOUTH WEST", "SUROESTE"],
+    "SE": ["SOUTH EAST", "SURESTE"],
+}
