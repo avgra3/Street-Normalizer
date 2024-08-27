@@ -57,12 +57,13 @@ def remove_extra_chars(initial_value: str) -> str:
 
 
 def cleaner(initial_value: str) -> str:
-    return normalize_street_abbreviations(
+    return normalize_directions(normalize_street_abbreviations(
         normalize_street_suffixes(
             normalize_unit_designators(
                 remove_extra_chars(initial_value)
             )
         )
+    )
     )
 
 
